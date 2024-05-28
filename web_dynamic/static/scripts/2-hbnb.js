@@ -18,7 +18,6 @@ function init () {
 function getApi () {
     $.get('http://0.0.0.0:5001/api/v1/status', function (data) {
         if (data.status === 'OK') {
-            console.log('API is working');
             $('DIV#api_status').addClass('available');
         } else {
             console.log('API is working');
