@@ -1,6 +1,6 @@
 $(document).ready(init);
 
-function init () {
+function init() {
     const amenityObj = {};
     $('.amenities .popover input').change(function () {
         if ($(this).is(':checked')) {
@@ -12,16 +12,16 @@ function init () {
         $('.amenities h4').text(names.sort().join(', '));
     });
 
-   getApi ();
+    getApi();
 }
 
-function getApi () {
-    $.get('http://0.0.0.0:5001/api/v1/status', function (data) {
+function getApi() {
+    $.getJSON('http://127.0.0.1:5001/api/v1/status/', function (data) {
+        console.log('getApi');
         if (data.status === 'OK') {
-            $('DIV#api_status').addClass('available');
+            $('#api_status').addClass('available');
         } else {
-            console.log('API is working');
-            $('DIV#api_status').removeClass('available');
+            $('#api_status').removeClass('available');
         }
     });
 }
