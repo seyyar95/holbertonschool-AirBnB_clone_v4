@@ -6,7 +6,8 @@ Contains the class TestConsoleDocs
 import console
 import inspect
 import pep8
-
+import unittest
+HBNBCommand = console.HBNBCommand
 
 
 class TestConsoleDocs(unittest.TestCase):
